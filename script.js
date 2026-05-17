@@ -29,7 +29,7 @@ function handleInput(event, currentIndex){
 	const currentBox = allInputBoxes[currentIndex];
 	const typedCharacter = event.data;
 
-	if(!typedCharacter || isDigit(typedCharacter))
+	if(!typedCharacter || !isDigit(typedCharacter))
 	{
 		currentBox.value = "";
 		return;
@@ -57,7 +57,7 @@ function focusPreviousBox(currentIndex) {
 function  focusNextBox(currentIndex) {
 	const nextIndex = currentIndex +1;
 	if(nextIndex< allInputBoxes.length){
-       allInputBoxes.focus();
+       allInputBoxes[nextIndex].focus();
 	}
 }
 
